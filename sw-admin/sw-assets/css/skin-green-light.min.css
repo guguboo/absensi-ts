@@ -1,0 +1,154 @@
+/* Warna dasar dan header */
+.skin-dark-modern .main-header .navbar {
+  background-color: #222; /* Hitam gelap */
+}
+
+/* Link navigasi */
+.skin-dark-modern .main-header .navbar .nav>li>a {
+  color: #eee; /* Abu-abu terang */
+}
+
+/* Hover, aktif, focus pada link */
+.skin-dark-modern .main-header .navbar .nav>li>a:hover,
+.skin-dark-modern .main-header .navbar .nav>li>a:active,
+.skin-dark-modern .main-header .navbar .nav>li>a:focus,
+.skin-dark-modern .main-header .navbar .nav .open>a,
+.skin-dark-modern .main-header .navbar .nav .open>a:hover,
+.skin-dark-modern .main-header .navbar .nav .open>a:focus,
+.skin-dark-modern .main-header .navbar .nav>.active>a {
+  background: rgba(255, 255, 255, 0.1); /* Efek transparan abu-abu muda */
+  color: #fff; /* Warna putih */
+}
+
+/* Sidebar toggle */
+.skin-dark-modern .main-header .navbar .sidebar-toggle {
+  color: #ccc; /* Abu-abu sedang */
+}
+.skin-dark-modern .main-header .navbar .sidebar-toggle:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+/* Logo */
+.skin-dark-modern .main-header .logo {
+  background-color: #121212; /* Hitam sangat gelap */
+  color: #eee; /* Abu-abu terang */
+  border-bottom: none;
+}
+.skin-dark-modern .main-header .logo:hover {
+  background-color: #1a1a1a; /* Sedikit lebih terang */
+}
+
+/* Header pengguna */
+.skin-dark-modern .main-header li.user-header {
+  background-color: #222; /* Hitam gelap */
+}
+
+/* Content header */
+.skin-dark-modern .content-header {
+  background: transparent; /* Tidak diubah */
+}
+
+/* Body dan sidebar */
+.skin-dark-modern .wrapper,
+.skin-dark-modern .main-sidebar,
+.skin-dark-modern .left-side {
+  background-color: #111; /* Hitam sangat gelap */
+}
+
+/* Sidebar kanan */
+.skin-dark-modern .main-sidebar {
+  border-right: 1px solid #333; /* Garis tepi abu-abu gelap */
+}
+
+/* Panel pengguna */
+.skin-dark-modern .user-panel>.info,
+.skin-dark-modern .user-panel>.info>a {
+  color: #ccc; /* Abu-abu muda */
+}
+
+/* Menu sidebar */
+.skin-dark-modern .sidebar-menu>li {
+  transition: border-left-color 0.3s ease;
+}
+.skin-dark-modern .sidebar-menu>li.header {
+  color: #999; /* Abu-abu sedang */
+  background: #1a1a1a; /* Hitam gelap */
+}
+.skin-dark-modern .sidebar-menu>li>a {
+  border-left: 3px solid transparent;
+  font-weight: 600;
+  padding: 10px 15px;
+  display: block;
+}
+.skin-dark-modern .sidebar-menu>li:hover>a,
+.skin-dark-modern .sidebar-menu>li.active>a {
+  color: #fff; /* Putih */
+  background-color: #222; /* Sedikit lebih terang dari latar belakang sidebar */
+  border-left-color: #00aaff; /* Warna aksen biru cerah */
+}
+.skin-dark-modern .sidebar-menu>li.active {
+  border-left-color: #00aaff; /* Aksen warna biru */
+}
+.skin-dark-modern .sidebar-menu>li>.treeview-menu {
+  background: #1a1a1a; /* Background menu dropdown lebih gelap */
+}
+.skin-dark-modern .sidebar a {
+  color: #ccc; /* Abu-abu muda */
+}
+.skin-dark-modern .sidebar a:hover {
+  text-decoration: none;
+  background-color: #333; /* Latar belakang hover lebih gelap */
+}
+.skin-dark-modern .sidebar-menu .treeview-menu>li>a {
+  color: #999; /* Abu-abu sedang */
+}
+.skin-dark-modern .sidebar-menu .treeview-menu>li.active>a,
+.skin-dark-modern .sidebar-menu .treeview-menu>li>a:hover {
+  color: #fff; /* Putih */
+}
+.skin-dark-modern .sidebar-menu .treeview-menu>li.active>a {
+  font-weight: 600;
+}
+
+/* Form sidebar */
+.skin-dark-modern .sidebar-form {
+  border-radius: 4px;
+  border: 1px solid #333; /* Border abu-abu gelap */
+  margin: 10px 10px;
+  background-color: #222; /* Latar belakang gelap */
+}
+.skin-dark-modern .sidebar-form input[type="text"],
+.skin-dark-modern .sidebar-form .btn {
+  box-shadow: none;
+  background-color: #333; /* Input dan button lebih gelap */
+  border: 1px solid #555; /* Border lebih terang dari latar belakang */
+  height: 35px;
+  color: #eee;
+}
+.skin-dark-modern .sidebar-form input[type="text"] {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 0;
+}
+.skin-dark-modern .sidebar-form input[type="text"]:focus,
+.skin-dark-modern .sidebar-form .btn:focus {
+  background-color: #444; /* Saat fokus */
+  color: #fff;
+  border-color: #00aaff; /* Warna aksen saat fokus */
+}
+.skin-dark-modern .sidebar-form .btn {
+  border-top-left-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 0;
+  color: #fff;
+  background-color: #00aaff; /* Warna aksen */
+}
+@media (min-width: 768px) {
+  .skin-dark-modern.sidebar-mini.sidebar-collapse .sidebar-menu>li>.treeview-menu {
+    border-left: 1px solid #333;
+  }
+}

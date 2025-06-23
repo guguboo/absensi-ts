@@ -1,0 +1,4 @@
+[14-May-2025 11:21:36 Asia/Jakarta] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'tesj5689_user'@'localhost' (using password: YES) in /home/tesj5869/public_html/absensiradius/sw-library/sw-config.php on line 17
+[14-May-2025 11:22:18 Asia/Jakarta] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'tesj5689_user'@'localhost' (using password: YES) in /home/tesj5869/public_html/absensiradius/sw-library/sw-config.php on line 17
+[14-May-2025 11:22:22 Asia/Jakarta] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'tesj5689_user'@'localhost' (using password: YES) in /home/tesj5869/public_html/absensiradius/sw-library/sw-config.php on line 17
+[14-May-2025 11:22:31 Asia/Jakarta] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'tesj5689_user'@'localhost' (using password: YES) in /home/tesj5869/public_html/absensiradius/sw-library/sw-config.php on line 17
