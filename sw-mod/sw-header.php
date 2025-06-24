@@ -40,7 +40,7 @@ echo'
     /* Tema Gelap dan Modern */
     body {
       background-color: #D3C0CD; /* backgorund abu-abu elegan */
-      color: #ffffff; /* teks terang untuk kontras */
+      color: #708090; /* teks abu terang untuk kontras */
     }
     /* Header, Modal, dan Elemen Lain */
     .appHeader, .modal-content, .listview-title, .item {
