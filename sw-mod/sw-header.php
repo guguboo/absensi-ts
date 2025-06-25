@@ -40,15 +40,15 @@ echo'
     /* Tema Gelap dan Modern */
     body {
       background-color: #D3C0CD; /* backgorund abu-abu elegan */
-      color: #ffffff; /* teks terang untuk kontras */
+      color: #708090; /* teks terang untuk kontras */
     }
     /* Header, Modal, dan Elemen Lain */
     .appHeader, .modal-content, .listview-title, .item {
       background-color: #eoeoeo!important; /* abu-abu medium untuk elemen */
-      color: #000000 !important; /* teks terang */
+      color: #000000 !important; /* teks hitam */
     }
     a {
-      color: #ffffff !important; /* warna link hitam kontras tetap */
+      color: #rgba (0,0,0,0.1) + abu !important; /* warna link hitam kontras tetap */
     }
     /* Link hover untuk efek interaktif */
     a:hover {
