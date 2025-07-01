@@ -137,7 +137,7 @@ include('../../../sw-library/sw-function.php');
                       </div>';
         }
         $output['aaData'][] = $row;
-        $no++;
+        // $no++;
     }
     echo json_encode($output);
   
