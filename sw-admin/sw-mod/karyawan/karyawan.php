@@ -369,26 +369,6 @@ echo'
                   </div>
                 </div>
                 
-                <div class="form-group">
-                  <label class="col-sm-2 control-label">Tanggal Lahir</label>
-                  <div class="col-sm-6">
-                    <input type="date" class="form-control" name="date_of_birth" value="'.$row['date_of_birth'].'" required>
-                  </div>
-                </div>
-                
-                <div class="form-group">
-                  <label class="col-sm-2 control-label">Alamat</label>
-                  <div class="col-sm-6">
-                    <textarea class="form-control" name="address" rows="3" required>'.$row['address'].'</textarea>
-                  </div>
-                </div>
-                
-                <div class="form-group">
-                  <label class="col-sm-2 control-label">Pendidikan Terakhir</label>
-                  <div class="col-sm-6">
-                    <input type="text" class="form-control" name="education" value="'.$row['education'].'" required>
-                  </div>
-                </div>
                 
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Foto</label>
