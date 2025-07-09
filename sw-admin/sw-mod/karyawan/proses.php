@@ -1,19 +1,22 @@
 <?php
+echo "<script>console.log('testing');</script>";
 session_start();
 if(empty($_SESSION['SESSION_USER']) && empty($_SESSION['SESSION_ID'])){
     header('location:../../login/');
  exit;}
 else {
-require_once'../../../sw-library/sw-config.php';
-require_once'../../login/login_session.php';
+require_once '../../../sw-library/sw-config.php';
+require_once '../../login/login_session.php';
 include('../../../sw-library/sw-function.php');
 $max_size = 2000000; //2MB
 $salt = '$%DEf0&TTd#%dSuTyr47542"_-^@#&*!=QxR094{a911}+';
 
 switch (@$_GET['action']){
-
-case 'add':
+  
+  case 'add':
+  echo "<script>console.log('masuk add');</script>";
   $error = array();
+  echo "<script>console.log('tahap 1');</script>";
   
   if (empty($_POST['employees_code'])) {
       $error[] = 'Nip tidak boleh kosong';
@@ -26,7 +29,6 @@ case 'add':
     } else {
       $employees_email= strip_tags($_POST['employees_email']);
   }
-
 
   if (empty($_POST['employees_password'])) {
       $error[] = 'Password tidak boleh kosong';
@@ -59,6 +61,18 @@ case 'add':
       $building_id = anti_injection($_POST['building_id']);
   }
 
+  if (empty($_POST['address'])) {
+      $error[] = 'Alamat tidak boleh kosong';
+    } else {
+      $employees_address = anti_injection($_POST['address']);
+  }
+  if (empty($_POST['education'])) {
+      $error[] = 'Pendidikan tidak boleh kosong';
+    } else {
+      $employees_education = anti_injection($_POST['education']);
+  }
+
+  echo "<script>console.log('berhasil after input data');</script>";
 
   $photo = $_FILES["photo"]["name"];
     if($photo ==''){
@@ -70,6 +84,8 @@ case 'add':
                       position_id,
                       shift_id,
                       building_id,
+                      address,
+                      last_education,
                       photo,
                       created_login,
                       created_cookies) values('$employees_code',
@@ -79,12 +95,14 @@ case 'add':
                       '$position_id',
                       '$shift_id',
                       '$building_id',
+                      '$employees_address',
+                      '$employees_education',
                       '',
                       '$date $time',
                       '-')";
             if($connection->query($add) === false) { 
+              echo'Data tidak berhasil disimpan!';
                 die($connection->error.__LINE__); 
-                echo'Data tidak berhasil disimpan!';
             } else{
                 echo'success';
                 imagejpeg($tmp,$directory,90);
@@ -136,6 +154,8 @@ case 'add':
                       position_id,
                       shift_id,
                       building_id,
+                      address,
+                      last_education,
                       photo,
                       created_login,
                       created_cookies) values('$employees_code',
@@ -145,12 +165,14 @@ case 'add':
                       '$position_id',
                       '$shift_id',
                       '$building_id',
+                      '$employees_address',
+                      '$employees_education',
                       '$photo',
                       '$date $time',
                       '-')";
             if($connection->query($add) === false) { 
+              echo'Data tidak berhasil disimpan!';
                 die($connection->error.__LINE__); 
-                echo'Data tidak berhasil disimpan!';
             } else{
                 echo'success';
                 imagejpeg($tmp,$directory,90);
@@ -181,9 +203,6 @@ case 'update':
       $employees_code= anti_injection($_POST['employees_code']);
   }
 
-
-
-
   if (empty($_POST['employees_name'])) {
       $error[] = 'Nama tidak boleh kosong';
     } else {
@@ -209,6 +228,17 @@ case 'update':
       $building_id = anti_injection($_POST['building_id']);
   }
 
+  if (empty($_POST['address'])) {
+      $error[] = 'Alamat tidak boleh kosong';
+    } else {
+      $employees_address = anti_injection($_POST['address']);
+  }
+  if (empty($_POST['education'])) {
+      $error[] = 'Pendidikan tidak boleh kosong';
+    } else {
+      $employees_education = anti_injection($_POST['education']);
+  }
+
 
   $photo = $_FILES["photo"]["name"];
   $lokasi_file = $_FILES['photo']['tmp_name'];  
@@ -219,10 +249,12 @@ case 'update':
             employees_name='$employees_name',
             position_id='$position_id',
             shift_id='$shift_id',
-            building_id='$building_id' WHERE id='$id'"; 
+            building_id='$building_id',
+            address='$employees_address',
+            last_education='$employees_education' WHERE id='$id'"; 
     if($connection->query($update) === false) { 
+      echo'Data tidak berhasil disimpan!';
         die($connection->error.__LINE__); 
-        echo'Data tidak berhasil disimpan!';
     } else{
         echo'success';
     }}
@@ -274,7 +306,9 @@ case 'update':
             position_id='$position_id',
             shift_id='$shift_id',
             building_id='$building_id',
-            photo='$photo' WHERE id='$id'"; 
+            photo='$photo',
+            address='$employees_address',
+            last_education='$employees_education' WHERE id='$id'"; 
     if($connection->query($update) === false) { 
         die($connection->error.__LINE__); 
         echo'Data tidak berhasil disimpan!';
