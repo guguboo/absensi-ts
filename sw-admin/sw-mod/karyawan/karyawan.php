@@ -131,12 +131,6 @@ echo'
                   </div>
                 </div>
                 
-                <div class="form-group">
-                  <label class="col-sm-2 control-label">Tanggal Lahir</label>
-                  <div class="col-sm-6">
-                    <input type="date" class="form-control" name="date_of_birth" required>
-                  </div>
-                </div>
                 
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Alamat</label>
@@ -261,6 +255,21 @@ echo'
       $result = $connection->query($query);
       if($result->num_rows > 0){
       $row  = $result->fetch_assoc();
+      echo $row;
+      
+      // <div class="form-group">
+      //   <label class="col-sm-2 control-label">Tanggal Lahir</label>
+      //   <div class="col-sm-6">
+      //     <input type="date" class="form-control" name="date_of_birth" value="'.$row['date_of_birth'].'" required>
+      //   </div>
+      // </div>
+      
+      // <div class="form-group">
+      //   <label class="col-sm-2 control-label">Tanggal Lahir</label>
+      //   <div class="col-sm-6">
+      //     <input type="date" class="form-control" name="date_of_birth" required>
+      //   </div>
+      // </div>
       echo'
       <div class="nav-tabs-custom">
         <div class="tab-content">
@@ -291,12 +300,6 @@ echo'
                   </div>
                 </div>
                 
-                <div class="form-group">
-                  <label class="col-sm-2 control-label">Tanggal Lahir</label>
-                  <div class="col-sm-6">
-                    <input type="date" class="form-control" name="date_of_birth" value="'.$row['date_of_birth'].'" required>
-                  </div>
-                </div>
                 
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Alamat</label>
@@ -308,7 +311,7 @@ echo'
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Pendidikan Terakhir</label>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control" name="education" value="'.$row['education'].'" required>
+                    <input type="text" class="form-control" name="education" value="'.$row['last_education'].'" required>
                   </div>
                 </div>
                 

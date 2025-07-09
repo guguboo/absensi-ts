@@ -1,5 +1,4 @@
 <?php
-echo "<script>console.log('testing');</script>";
 session_start();
 if(empty($_SESSION['SESSION_USER']) && empty($_SESSION['SESSION_ID'])){
     header('location:../../login/');
@@ -12,8 +11,7 @@ $max_size = 2000000; //2MB
 $salt = '$%DEf0&TTd#%dSuTyr47542"_-^@#&*!=QxR094{a911}+';
 
 switch (@$_GET['action']){
-  
-  case 'add':
+case 'add':
   echo "<script>console.log('masuk add');</script>";
   $error = array();
   echo "<script>console.log('tahap 1');</script>";
@@ -71,8 +69,6 @@ switch (@$_GET['action']){
     } else {
       $employees_education = anti_injection($_POST['education']);
   }
-
-  echo "<script>console.log('berhasil after input data');</script>";
 
   $photo = $_FILES["photo"]["name"];
     if($photo ==''){
