@@ -12,9 +12,7 @@ $salt = '$%DEf0&TTd#%dSuTyr47542"_-^@#&*!=QxR094{a911}+';
 
 switch (@$_GET['action']){
 case 'add':
-  echo "<script>console.log('masuk add');</script>";
   $error = array();
-  echo "<script>console.log('tahap 1');</script>";
   
   if (empty($_POST['employees_code'])) {
       $error[] = 'Nip tidak boleh kosong';
