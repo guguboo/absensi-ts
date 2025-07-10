@@ -70,7 +70,7 @@ case 'add':
       $error[] = 'Tanggal Lahir tidak boleh kosong';
     } else {
       $raw_date = anti_injection($_POST['date_of_birth']);
-      $date = DateTime::createFromFormat('Y-m-d', $raw_date);
+      $date = date_create($raw_date);
       $date_of_birth = $date->format('Y-m-d');
   }
 
@@ -246,7 +246,7 @@ case 'update':
       $error[] = 'Tanggal Lahir tidak boleh kosong';
     } else {
       $raw_date = anti_injection($_POST['date_of_birth']);
-      $date = DateTime::createFromFormat('Y-m-d', $raw_date);
+      $date = date_create($raw_date);
       $date_of_birth = $date->format('Y-m-d');
   }
 
