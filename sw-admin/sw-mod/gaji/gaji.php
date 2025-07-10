@@ -1,80 +1,104 @@
+<?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+?>
 
-        <!-- MODAL ADD -->
-        <div class="modal fade modalbox" id="modal-add" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Tambah Gaji</h5>
-                        <a href="javascript:;" data-dismiss="modal">Close</a>
-                    </div>
-                    <div class="modal-body">
-                        <form id="form-add-gaji" autocomplete="off">
-                            <div class="form-group basic">
-                                <div class="input-wrapper">
-                                    <label class="label">Nama</label>
-                                    <input type="text" class="form-control" name="name" value="'.$row_user['employees_name'].'" style="background:#eee" readonly required>
-                                    <i class="clear-input"><ion-icon name="close-circle"></ion-icon></i>
-                                </div>
-                            </div>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <title>Halaman Gaji - Absensi Radius</title>
 
-                            <div class="form-group basic">
-                                <div class="input-wrapper">
-                                    <label class="label">Mulai Gaji</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control datepicker" id="gajistart" name="gaji_start" placeholder="'.tanggal_ind($date).'" value="'.tanggal_ind($date).'" required>
-                                            <div class="input-group-addon">
-                                                <ion-icon name="calendar-outline"></ion-icon>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </div>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-                            <div class="form-group basic">
-                                <div class="input-wrapper">
-                                    <label class="label">Berakhir Gaji</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control datepicker" id="gajiend" name="gaji_end" placeholder="'.tanggal_ind($date).'" value="" required>
-                                            <div class="input-group-addon">
-                                                <ion-icon name="calendar-outline"></ion-icon>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </div>
+    <style>
+        /* Navbar dengan warna elegan (biru tua) dan tulisan putih */
+        .navbar-custom {
+            background-color: #cccccc; /* biru navy elegan */
+        }
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-link {
+            color: #ffffff !important; /* putih abu-abu terang */
+            font-weight: 800;
+        }
+        .navbar-custom .nav-link:hover {
+            color: #f39c12 !important; /* kuning emas saat hover */
+        }
+        body {
+            background-color: #f8f9fa; /* warna background lembut */
+        }
+        h1 {
+            color: #2c3e50;
+            font-weight: 700;
+        }
+        .btn-primary {
+            background-color: #2980b9;
+            border-color: #2980b9;
+        }
+        .btn-primary:hover {
+            background-color: #3498db;
+            border-color: #3498db;
+        }
+    </style>
+</head>
+<body>
 
-                            <div class="form-group basic">
-                                <div class="input-wrapper">
-                                    <label class="label">Tanggal Masuk Kerja</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control datepicker" name="date_work" placeholder="'.tanggal_ind($date).'" value="" required>
-                                            <div class="input-group-addon">
-                                                <ion-icon name="calendar-outline"></ion-icon>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </div>
+<nav class="navbar navbar-expand-lg navbar-custom">
+  <a class="navbar-brand" href="#">Absensi Radius</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+  </button>
 
-                             <div class="form-group basic">
-                                <div class="input-wrapper">
-                                    <label class="label">Jumlah Gaji</label>
-                                    <input type="number" class="form-control" name="gaji_total" value="" required>
-                                    <i class="clear-input"><ion-icon name="close-circle"></ion-icon></i>
-                                </div>
-                            </div>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Gaji <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Dashboard</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-                            <div class="form-group basic">
-                                <div class="input-wrapper">
-                                    <label class="label">Keterangan</label>
-                                   <textarea rows="2" class="form-control gaji_description" name="gaji_description" required></textarea>
-                                    <i class="clear-input"><ion-icon name="close-circle"></ion-icon></i>
-                                </div>
-                            </div>
+<div class="container mt-5">
+    <h1>Halaman Gaji Karyawan </h1>
+    <p>Silahkan Input Data Gaji Karyawan !</p>
 
-                            <div class="form-group basic">
-                                <button type="submit" class="btn btn-danger btn-block btn-lg mt-2">Simpan</button>
-                            </div>
-                        </form>
-
-                    </div>
-                </div>
-            </div>
+    <form>
+        <div class="form-group">
+            <label>Nama</label>
+            <input type="text" class="form-control" value="Contoh Nama" readonly />
         </div>
+        <div class="form-group">
+            <label>Mulai Gaji</label>
+            <input type="date" class="form-control" value="<?php echo date('Y-m-d'); ?>" />
+        </div>
+        <div class="form-group">
+            <label>Berakhir Gaji</label>
+            <input type="date" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Tanggal Masuk Kerja</label>
+            <input type="date" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Jumlah Gaji</label>
+            <input type="number" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Keterangan</label>
+            <textarea class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Simpan</button>
+    </form>
+</div>
+
+<!-- Bootstrap & jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
