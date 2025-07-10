@@ -131,7 +131,13 @@ echo'
                   </div>
                 </div>
                 
-                
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">Tanggal Lahir</label>
+                  <div class="col-sm-6">
+                    <input type="date" class="form-control" name="date_of_birth" required>
+                  </div>
+                </div>
+
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Alamat</label>
                   <div class="col-sm-6">
@@ -255,7 +261,6 @@ echo'
       $result = $connection->query($query);
       if($result->num_rows > 0){
       $row  = $result->fetch_assoc();
-      echo $row;
       
       // <div class="form-group">
       //   <label class="col-sm-2 control-label">Tanggal Lahir</label>
@@ -300,6 +305,12 @@ echo'
                   </div>
                 </div>
                 
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">Tanggal Lahir</label>
+                  <div class="col-sm-6">
+                    <input type="date" class="form-control" name="date_of_birth" value="'.$row['date_of_birth'].'" required>
+                  </div>
+                </div>
                 
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Alamat</label>

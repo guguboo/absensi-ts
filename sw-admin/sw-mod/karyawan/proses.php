@@ -38,7 +38,6 @@ case 'add':
       $employees_name= anti_injection($_POST['employees_name']);
   }
 
-
   if (empty($_POST['position_id'])) {
       $error[] = 'Posisi tidak boleh kosong';
     } else {
@@ -67,6 +66,11 @@ case 'add':
     } else {
       $employees_education = anti_injection($_POST['education']);
   }
+  if (empty($_POST['date_of_birth'])) {
+      $error[] = 'Tanggal Lahir tidak boleh kosong';
+    } else {
+      $date_of_birth = anti_injection($_POST['date_of_birth']);
+  }
 
   $photo = $_FILES["photo"]["name"];
     if($photo ==''){
@@ -78,6 +82,7 @@ case 'add':
                       position_id,
                       shift_id,
                       building_id,
+                      birth_date,
                       address,
                       last_education,
                       photo,
@@ -89,6 +94,7 @@ case 'add':
                       '$position_id',
                       '$shift_id',
                       '$building_id',
+                      '$date_of_birth',
                       '$employees_address',
                       '$employees_education',
                       '',
@@ -148,6 +154,7 @@ case 'add':
                       position_id,
                       shift_id,
                       building_id,
+                      birth_date,
                       address,
                       last_education,
                       photo,
@@ -159,6 +166,7 @@ case 'add':
                       '$position_id',
                       '$shift_id',
                       '$building_id',
+                      '$date_of_birth',
                       '$employees_address',
                       '$employees_education',
                       '$photo',
@@ -232,6 +240,11 @@ case 'update':
     } else {
       $employees_education = anti_injection($_POST['education']);
   }
+  if (empty($_POST['date_of_birth'])) {
+      $error[] = 'Tanggal Lahir tidak boleh kosong';
+    } else {
+      $date_of_birth = anti_injection($_POST['date_of_birth']);
+  }
 
 
   $photo = $_FILES["photo"]["name"];
@@ -245,7 +258,8 @@ case 'update':
             shift_id='$shift_id',
             building_id='$building_id',
             address='$employees_address',
-            last_education='$employees_education' WHERE id='$id'"; 
+            last_education='$employees_education',
+            birth_date='$date_of_birth' WHERE id='$id'"; 
     if($connection->query($update) === false) { 
       echo'Data tidak berhasil disimpan!';
         die($connection->error.__LINE__); 
@@ -302,7 +316,8 @@ case 'update':
             building_id='$building_id',
             photo='$photo',
             address='$employees_address',
-            last_education='$employees_education' WHERE id='$id'"; 
+            last_education='$employees_education',
+            birth_date='$date_of_birth' WHERE id='$id'"; 
     if($connection->query($update) === false) { 
         die($connection->error.__LINE__); 
         echo'Data tidak berhasil disimpan!';
@@ -469,7 +484,7 @@ if(!empty($_FILES['files']['name']) && in_array($_FILES['files']['type'], $csvMi
                                       position_id,
                                       shift_id,
                                       building_id,
-                                      date_of_birth,
+                                      birth_date,
                                       address,
                                       education,
                                       photo,
