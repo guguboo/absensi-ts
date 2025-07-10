@@ -4,9 +4,9 @@ $pacth_url	='http://'.$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"].'';
 
 // -------------- Koneksi Database ------------
 $DB_HOST 	= 'localhost';
-$DB_USER 	= 'root'; // User Database
-$DB_PASSWD  = ''; // Password Database
-$DB_NAME 	= 'absensi_ts2'; // Nama database
+$DB_USER 	= 'tesj5869_user'; // User Database
+$DB_PASSWD  = 'tritunggalswarna'; // Password Database
+$DB_NAME 	= 'tesj5869_db'; // Nama database
 // -------------- Koneksi Database ------------
 
 
@@ -16,7 +16,7 @@ $DB_NAME 	= 'absensi_ts2'; // Nama database
 @define("DB_NAME", $DB_NAME);
 $connection = NEW mysqli( $DB_HOST, $DB_USER, $DB_PASSWD, $DB_NAME );
 if ($connection->connect_error){
-        die('Gagal koneksi ke database: ' . $connection->connect_error);
+		echo 'Gagal koneksi ke database';
 	} else {
 		$query_site  = "SELECT * FROM sw_site LIMIT 1";
 		$result_site = $connection->query($query_site);

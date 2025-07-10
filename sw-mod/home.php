@@ -1,6 +1,6 @@
 <?php 
 if ($mod ==''){
-    header(header: 'location:../404');
+    header('location:../404');
     echo'kosong';
 }else{
     include_once 'sw-mod/sw-header.php';
@@ -54,6 +54,7 @@ if(!isset($_COOKIE['COOKIES_MEMBER'])){
     <!-- * App Capsule -->';
 }
   else{
+
   echo'<!-- App Capsule -->
     <div id="appCapsule">
         <!-- Wallet Card -->

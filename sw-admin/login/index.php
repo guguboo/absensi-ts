@@ -66,12 +66,23 @@ if(!empty($_SESSION['SESSION_USER']) && !empty($_SESSION['SESSION_ID'])){
     break;
     case 'forgot':
     echo'
-     <p class="login-box-msg">Silahkan kontak admin untuk mereset password!</p>
-      <div class="row">
-        <div class="col-xs-12">
-          <a href="./" class="btn btn-primary btn-block">Kembali</a>
+     <p class="login-box-msg">Silahkan masukkan email untuk meresset password:</p>
+      <form class="forgot">
+        <div class="form-group has-feedback">
+          <input type="text" name="email" class="form-control" placeholder="Masukkan email">
+          <span class="fa fa-user form-control-feedback"></span>
         </div>
-      </div>
+
+        <hr>
+        <div class="row">
+          <div class="col-xs-12">
+            <button type="submit" class="btn btn-primary btn-block">Resset Password</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </forgot>
+      <hr>
+      <a href="./">Login</a>
       ';
     break;
   }
@@ -85,7 +96,7 @@ if(!empty($_SESSION['SESSION_USER']) && !empty($_SESSION['SESSION_ID'])){
 <footer class="text-muted text-center">
     <span/>
     <br/>
-    <strong><?= date("Y"); ?> PT. Tritunggal Swarna</strong><br/><div id="credits" hidden>
+    <strong>2009-<?= date("Y"); ?> PT. Tritunggal Swarna</strong><br/><div id="credits" hidden>
 </footer>
 
         <script src="../sw-assets/js/jquery.min.js"></script>
