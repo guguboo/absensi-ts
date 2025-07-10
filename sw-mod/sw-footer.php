@@ -46,7 +46,7 @@ echo'
 ob_end_flush();
 echo'
 <footer class="text-muted text-center" style="display:none">
-   <p>© 2021 - '.$year.' '.$site_name.' - Design By: <span id="credits"><a class="credits_a" href="https://eydcom.com" target="_blank">eydcom.com</a></span></p>
+   <p>© '.$year.' '.$site_name.' <span id="credits" hidden></span></p>
 </footer>
 <!-- ///////////// Js Files ////////////////////  -->
 <!-- Jquery -->

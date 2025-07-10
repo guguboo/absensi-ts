@@ -5,6 +5,7 @@ if ($mod ==''){
 }else{
     include_once 'sw-mod/sw-header.php';
 if(!isset($_COOKIE['COOKIES_MEMBER'])){
+// <a href="oauth/google" class="btn btn-danger btn-block"><ion-icon name="logo-google"></ion-icon> Masuk Dengan Google</a>
  echo'
  <!-- App Capsule -->
     <div id="appCapsule">
@@ -38,14 +39,12 @@ if(!isset($_COOKIE['COOKIES_MEMBER'])){
 
                 <div class="form-links mt-2">
                     <div>
-                        <a href="registrasi">Mendaftar</a>
                     </div>
                     <div><a href="forgot" class="text-muted">Lupa Password?</a></div>
                 </div>
 
                 <div class="form-button-group  transparent">
                    <button type="submit" class="btn btn-primary btn-block"><ion-icon name="log-in-outline"></ion-icon> Masuk</button>
-                   <a href="oauth/google" class="btn btn-danger btn-block"><ion-icon name="logo-google"></ion-icon> Masuk Dengan Google</a>
                 </div>
 
             </form>

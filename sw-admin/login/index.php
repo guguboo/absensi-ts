@@ -94,9 +94,9 @@ if(!empty($_SESSION['SESSION_USER']) && !empty($_SESSION['SESSION_ID'])){
 
 
 <footer class="text-muted text-center">
-    <small></span><span <a href='http://www.eydcom.com'/> TOKO KAMI <a href='http://www.eydcom.com'/> - ONLINE DAN OFFLINE <a href='http://www.eydcom.com'/><br/>
- &#169; <strong>2012-<?= date("Y"); ?>. EYD COMPUTER - www.eydcom.com</a><br/><div id="credits"><a class="credits" href="https://eydcom.com" target="_blank"></a></span>
-    <em>Version 3.2</em></small>
+    <span/>
+    <br/>
+    <strong>2009-<?= date("Y"); ?> PT. Tritunggal Swarna</strong><br/><div id="credits" hidden>
 </footer>
 
         <script src="../sw-assets/js/jquery.min.js"></script>

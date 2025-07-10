@@ -14,6 +14,7 @@ $urutan++;
 $huruf = "OM";
 $kode_karyawan = $huruf . sprintf("%03s", $urutan);
 
+//    <a href="oauth/google" class="btn btn-danger btn-block"><ion-icon name="logo-google"></ion-icon> Masuk Dengan Google</a>
  echo'
  
  <!-- App Capsule -->
@@ -55,8 +56,7 @@ $kode_karyawan = $huruf . sprintf("%03s", $urutan);
                 </div>
 
                 <div class="form-button-group transparent">
-                   <button type="submit" class="btn btn-primary btn-block"><ion-icon name="log-in-outline"></ion-icon> Masuk</button>
-                   <a href="oauth/google" class="btn btn-danger btn-block"><ion-icon name="logo-google"></ion-icon> Masuk Dengan Google</a>
+                    <button type="submit" class="btn btn-primary btn-block"><ion-icon name="log-in-outline"></ion-icon> Masuk</button>
                 </div>
 
             </form>

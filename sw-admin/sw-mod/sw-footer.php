@@ -17,7 +17,7 @@ echo'
     <div class="pull-right hidden-xs">Theme LTE / 
       '.convert(memory_get_usage()).'
     </div>
-     &copy; 2012 - '.DATE('Y').' | '.$site_name.' | </i><span id="credits"><a class="credits" href="https://eydcom.com" target="_blank" id="credits">eydcom.com</a></span> 
+     &copy; '.DATE('Y').' | '.$site_name.' </i><span id="credits" hidden></span> 
   </footer>
 </div>
 <!-- wrapper -->
