@@ -69,7 +69,9 @@ case 'add':
   if (empty($_POST['date_of_birth'])) {
       $error[] = 'Tanggal Lahir tidak boleh kosong';
     } else {
-      $date_of_birth = anti_injection($_POST['date_of_birth']);
+      $raw_date = anti_injection($_POST['date_of_birth']);
+      $date = DateTime::createFromFormat('Y-m-d', $raw_date);
+      $date_of_birth = $date->format('Y-m-d');
   }
 
   $photo = $_FILES["photo"]["name"];
@@ -243,7 +245,9 @@ case 'update':
   if (empty($_POST['date_of_birth'])) {
       $error[] = 'Tanggal Lahir tidak boleh kosong';
     } else {
-      $date_of_birth = anti_injection($_POST['date_of_birth']);
+      $raw_date = anti_injection($_POST['date_of_birth']);
+      $date = DateTime::createFromFormat('Y-m-d', $raw_date);
+      $date_of_birth = $date->format('Y-m-d');
   }
 
 
