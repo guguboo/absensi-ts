@@ -69,7 +69,7 @@ case 'add':
   if (empty($_POST['date_of_birth'])) {
       $error[] = 'Tanggal Lahir tidak boleh kosong';
     } else {
-      $date_of_birth = anti_injection($_POST['date_of_birth']);
+      $date_of_birth = (string) anti_injection($_POST['date_of_birth']);
   }
 
   $photo = $_FILES["photo"]["name"];
@@ -243,7 +243,7 @@ case 'update':
   if (empty($_POST['date_of_birth'])) {
       $error[] = 'Tanggal Lahir tidak boleh kosong';
     } else {
-      $date_of_birth = anti_injection($_POST['date_of_birth']);
+      $date_of_birth = (string) anti_injection($_POST['date_of_birth']);
   }
 
 
