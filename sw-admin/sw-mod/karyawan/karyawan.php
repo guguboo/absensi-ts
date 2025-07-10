@@ -308,7 +308,7 @@ echo'
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Tanggal Lahir</label>
                   <div class="col-sm-6">
-                    <input type="date" class="form-control" name="date_of_birth" value="'.$row['date_of_birth'].'" required>
+                    <input type="date" class="form-control" name="date_of_birth" value="'.$row['birth_date'].'" required>
                   </div>
                 </div>
                 
